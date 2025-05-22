@@ -1,5 +1,5 @@
-* Modello di AI per individuare le icone da applicare ad un bollettino meteo a partire
-* da alcune variabili di un modello di reanalisi 
+** Modello di AI per individuare le icone da applicare ad un bollettino meteo a partire
+** da alcune variabili di un modello di reanalisi 
 
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
