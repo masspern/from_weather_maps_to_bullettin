@@ -1,3 +1,9 @@
+Massimo Perna, 
+Consorzio LaMMA - 
+2025
+
+---
+
 # 📌 Allineamento di Mappe con OpenCV (Feature Matching con ORB)
 
 Questo script allinea una serie di immagini `.png` (mappe) rispetto a una "mappa master", usando **feature detection** con ORB (Oriented FAST and Rotated BRIEF) e trasformazioni affini.
