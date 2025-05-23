@@ -1,4 +1,6 @@
-# ALLINEAMENTO MAPPE CON OPENCV
+# Massimo Perna
+# Consorzio LaMMA
+# 2025
 
 
 
