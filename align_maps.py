@@ -8,9 +8,9 @@ from PIL import Image
 import os
 
 # === CONFIG ===
-master_path = '/mnt/d/DATA/DRIVE-F/LAVORO/AI_BOLLETTINI/mappe_estratte/nuove/boll_toscana_2011-01-01_1.png'
-input_dir = '/mnt/d/DATA/DRIVE-F/LAVORO/AI_BOLLETTINI/mappe_estratte/nuove'
-output_dir = '/mnt/d/DATA/DRIVE-F/LAVORO/AI_BOLLETTINI/mappe_estratte/mappe_allineate'
+master_path = '/path/to/template_map.png'
+input_dir = '/path/to/all/png/maps/'
+output_dir = '/path/to/output/png/maps'
 
 # DIMESIONE DELLA MAPPA MASTER ==> 294, 303
 
@@ -24,7 +24,7 @@ orb = cv2.ORB_create(5000)
 kp_master, des_master = orb.detectAndCompute(master, None)
 
 files = sorted([f for f in os.listdir(input_dir) if f.endswith('.png')])
-print(f"📂 Trovate {len(files)} mappe da allineare")
+print(f" Trovate {len(files)} mappe da allineare")
 
 for fname in files:
     path = os.path.join(input_dir, fname)
@@ -36,7 +36,7 @@ for fname in files:
     matches = matcher.match(des_master, des_img)
     
     if len(matches) < 10:
-        print(f"❗ Matching debole per {fname}")
+        print(f" Matching debole per {fname}")
         continue
 
     src_pts = np.float32([kp_master[m.queryIdx].pt for m in matches]).reshape(-1, 1, 2)
@@ -48,6 +48,6 @@ for fname in files:
 
     out_path = os.path.join(output_dir, fname)
     cv2.imwrite(out_path, aligned)
-    print(f"✅ Allineata: {fname}")
+    print(f" Allineata: {fname}")
 
-print("🎉 Allineamento completato")
+print(" Allineamento completato")
