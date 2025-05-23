@@ -1,6 +1,6 @@
-Massimo Perna
-Consorzio LaMMA
-2025
+- Massimo Perna
+- Consorzio LaMMA
+- 2025
 
 
 # 🗺️ Estrazione di Mappe da PDF (Griglia 3x3)
