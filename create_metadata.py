@@ -1,4 +1,9 @@
-#crea metadati etichette (corretto con id icona unificati)
+# Massimo Perna
+# Consorzio LaMMA
+# 2025
+
+
+
 import os
 import json
 import numpy as np
