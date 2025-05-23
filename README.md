@@ -1,5 +1,11 @@
 # Modello AI per individuare le icone da applicare ad un bollettino meteo a partire da dati di forecast
 
+---
+
+Valerio Capecchi e Massimo Perna, Consorzio,  LaMMA - 2025
+
+---
+
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
