@@ -1,3 +1,8 @@
+Massimo Perna
+Consorzio LaMMA
+2025
+
+
 # 🗺️ Estrazione di Mappe da PDF (Griglia 3x3)
 
 Questo script Python estrae automaticamente 9 mappe da PDF (presumibilmente disposte in una griglia 3x3), le ritaglia e le salva come immagini `.png`.
