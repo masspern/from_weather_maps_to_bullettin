@@ -1,4 +1,6 @@
-#   ESTRAI VARIABILI DAI GRIB
+# Massimo Perna
+# Consorzio LaMMA
+# 2025
 
 import os
 import numpy as np
