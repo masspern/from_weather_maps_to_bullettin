@@ -32,13 +32,13 @@ def estrai_x(grib_path, step_hour):
         dati = []
         for var in VARIABILI:
             if var not in ds:
-                print(f"⚠️ Variabile {var} non trovata in {grib_path}")
+                print(f" Variabile {var} non trovata in {grib_path}")
                 return None
             data = ds[var].sel(step=datetime.timedelta(hours=step_hour))
             dati.append(data.values)
         return np.stack(dati, axis=0)  # shape (5, H, W)
     except Exception as e:
-        print(f"⛔ Errore GRIB {grib_path} step {step_hour}: {e}")
+        print(f" Errore GRIB {grib_path} step {step_hour}: {e}")
         return None
 
 # === LOOP sui GRIB ===
@@ -50,7 +50,7 @@ for fname in sorted(os.listdir(GRIB_DIR)):
     try:
         base_date = datetime.datetime.strptime(date_str, "%Y%m%d")
     except:
-        print(f"⚠️ Nome file non valido: {fname}")
+        print(f" Nome file non valido: {fname}")
         continue
 
     grib_path = os.path.join(GRIB_DIR, fname)
@@ -63,5 +63,5 @@ for fname in sorted(os.listdir(GRIB_DIR)):
 
         out_path = os.path.join(OUT_DIR, f"{step_time}.npy")
         np.save(out_path, X)
-        print(f"✅ Salvato: {out_path}  | shape: {X.shape}")
+        print(f" Salvato: {out_path}  | shape: {X.shape}")
 
