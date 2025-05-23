@@ -1,5 +1,5 @@
-Massimo Perna
-Consorzio LaMMA
+Massimo Perna, 
+Consorzio LaMMA - 
 2025
 
 ---
