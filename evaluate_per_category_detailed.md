@@ -1,3 +1,8 @@
+Massimo Perna, 
+Consorzio LaMMA - 
+2025
+
+---
 
 # Funzione `evaluate_per_category_detailed`
 
