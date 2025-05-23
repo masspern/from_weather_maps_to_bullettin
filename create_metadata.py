@@ -10,10 +10,10 @@ OUT_NPZ = '/path/to/metadatipath/metadata.npz'
 
 # === Carica mapping unificati
 cat2label2id = {
-    "nuvola": json.load(open("/path/to/label/unified_label2id_nuvola.json")),
-    "mare": json.load(open("/path/to/label//unified_label2id_mare.json")),
-    "vento": json.load(open("//path/to/label//unified_label2id_vento.json")),
-    "temperatura": json.load(open("/path/to/label//unified_label2id_temperatura.json")),
+    "nuvola": json.load(open("/path/to/label/nuvola.json")),
+    "mare": json.load(open("/path/to/label/mare.json")),
+    "vento": json.load(open("//path/to/label/vento.json")),
+    "temperatura": json.load(open("/path/to/label/temperatura.json")),
 }
 
 # Calcola NUM_ID massimo
