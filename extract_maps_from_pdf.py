@@ -1,3 +1,8 @@
+# Massimo Perna
+# Consorzio LaMMA
+# 2025
+
+
 import os
 import fitz  # PyMuPDF
 from PIL import Image
