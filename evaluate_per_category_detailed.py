@@ -1,4 +1,6 @@
-# === SCRIPT COMPLETO: TRAINING E VALIDAZIONE CON RESNET50 MIGLIORATA === E' QUESTO QUELLO FINALE 03/05/2025
+# Massimo Perna
+# Consorzio LaMMA
+# 2025
 
 
 import torch
@@ -31,10 +33,10 @@ with open("/path/to//pos2cat.json") as f:
 pos2cat = {str(k): v[0] if isinstance(v, list) else v for k, v in pos2cat.items()}
 
 cat2label2id = {
-    "nuvola": json.load(open("/path/to/label/unified_label2id_nuvola.json")),
-    "mare": json.load(open("/path/to/label/unified_label2id_mare.json")),
-    "vento": json.load(open("/path/to/label/unified_label2id_vento.json")),
-    "temperatura": json.load(open("/path/to/label/unified_label2id_temperatura.json")),
+    "nuvola": json.load(open("/path/to/label/nuvola.json")),
+    "mare": json.load(open("/path/to/label/mare.json")),
+    "vento": json.load(open("/path/to/label/vento.json")),
+    "temperatura": json.load(open("/path/to/label/temperatura.json")),
 }
 
 NUM_ID = max([max(d.values()) for d in cat2label2id.values()]) + 1
@@ -142,9 +144,9 @@ class MaskedCrossEntropyLoss(nn.Module):
         self.luna_ids = set()
         self.diurna_ids = set()
               
-        print("🌙 ID luna:", sorted(self.luna_ids))
-        print("🌞 ID giorno:", sorted(self.diurna_ids))
-        print("🔍 Verifica ID luna / giorno")
+        print(" ID luna:", sorted(self.luna_ids))
+        print(" ID giorno:", sorted(self.diurna_ids))
+        print(" Verifica ID luna / giorno")
         for cat, label2id in cat2label2id.items():
             for label, idx in label2id.items():
                 if "luna" in label.lower():
@@ -177,7 +179,7 @@ class MaskedCrossEntropyLoss(nn.Module):
             # Debug: controlla target bloccati
         invalid = mask[torch.arange(mask.size(0)), targets] == 0
         if invalid.any():
-            print("🚨 Target BLOCCATI dalla maschera:")
+            print("Target BLOCCATI dalla maschera:")
             for idx in torch.nonzero(invalid).flatten()[:10]:
                 batch_idx = idx.item() // POS
                 pos_idx = idx.item() % POS
@@ -378,7 +380,7 @@ for epoch in range(EPOCHS):
         totals = y.numel()
         batch_acc = corrects / totals
         if loss.item() > 1e4:
-            print(f"\n🚨 Loss anomala: {loss.item():.4f}")
+            print(f"\n Loss anomala: {loss.item():.4f}")
             print("Filenames:", filenames)
             print("Target sample:", y[0])
             print("Valid IDs in mask:", (criterion.base_mask[0] > 0).sum(dim=-1))
@@ -460,7 +462,7 @@ for epoch in range(EPOCHS):
 
     
     # Stampa metriche per categoria
-    print("\n📊 METRICHE DI VALIDAZIONE PER CATEGORIA:")
+    print("\n METRICHE DI VALIDAZIONE PER CATEGORIA:")
     for cat, vals in metrics_per_cat.items():
         print(f"[{cat.upper():7}] Acc={vals['accuracy']:.3f}  Prec={vals['precision']:.3f}  "
               f"Recall={vals['recall']:.3f}  F1={vals['f1_score']:.3f}  (N={vals['n']})")
