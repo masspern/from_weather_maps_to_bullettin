@@ -2,7 +2,7 @@
 
 ---
 
-Valerio Capecchi e Massimo Perna, Consorzio,  LaMMA - 2025
+Valerio Capecchi e Massimo Perna, Consorzio LaMMA - 2025
 
 ---
 
