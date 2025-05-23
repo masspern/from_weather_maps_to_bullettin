@@ -1,3 +1,9 @@
+Massimo Perna, 
+Consorzio LaMMA - 
+2025
+
+---
+
 # Crea Metadati Etichette (con ID icona unificati)
 
 Questo script Python genera un file `.npz` contenente metadati strutturati a partire da etichette annotate in formato JSON e dati associati in formato `.npy`. Viene utilizzato per standardizzare le etichette in diverse categorie meteorologiche (nuvola, mare, vento, temperatura) e associarle a posizioni specifiche all'interno di ogni esempio.
